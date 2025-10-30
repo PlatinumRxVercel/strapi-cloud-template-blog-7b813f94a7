@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pdps",
+  "info": {
+    "singularName": "pdp",
+    "pluralName": "pdps",
+    "displayName": "PDP"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SaltId": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "SaltName": {
+      "type": "string",
+      "required": true
+    },
+    "ShortDescription": {
+      "type": "blocks"
+    },
+    "LongDescription": {
+      "type": "blocks"
+    },
+    "Uses": {
+      "type": "blocks"
+    },
+    "Benefits": {
+      "type": "blocks"
+    },
+    "SideEffects": {
+      "type": "blocks"
+    },
+    "DirectionsForUse": {
+      "type": "blocks"
+    },
+    "MechanismOfAction": {
+      "type": "blocks"
+    },
+    "SafetyAdvice": {
+      "type": "blocks"
+    },
+    "QuickTips": {
+      "type": "blocks"
+    },
+    "Storage": {
+      "type": "blocks"
+    },
+    "DrugFoodInteraction": {
+      "type": "blocks"
+    },
+    "DrugDrugInteraction": {
+      "type": "blocks"
+    },
+    "DrugDiseaseInteractions": {
+      "type": "blocks"
+    },
+    "DailyDose": {
+      "type": "blocks"
+    },
+    "Overdose": {
+      "type": "blocks"
+    },
+    "MissedDose": {
+      "type": "blocks"
+    },
+    "FAQ": {
+      "type": "blocks"
+    }
+  }
+}
