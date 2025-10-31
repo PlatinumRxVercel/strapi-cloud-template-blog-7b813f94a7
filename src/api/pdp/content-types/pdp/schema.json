@@ -41,9 +41,6 @@
     "MechanismOfAction": {
       "type": "blocks"
     },
-    "SafetyAdvice": {
-      "type": "blocks"
-    },
     "QuickTips": {
       "type": "blocks"
     },
@@ -70,6 +67,14 @@
     },
     "FAQ": {
       "type": "blocks"
+    },
+    "References": {
+      "type": "blocks"
+    },
+    "SafetAdvice": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": true
     }
   }
 }

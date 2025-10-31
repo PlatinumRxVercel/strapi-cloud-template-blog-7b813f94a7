@@ -58,7 +58,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
     icon: 'address-book';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    advices: Schema.Attribute.Blocks;
   };
 }
 

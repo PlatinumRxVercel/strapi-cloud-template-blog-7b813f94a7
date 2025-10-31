@@ -7,11 +7,8 @@
   },
   "options": {},
   "attributes": {
-    "files": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images"]
+    "advices": {
+      "type": "blocks"
     }
   }
 }
