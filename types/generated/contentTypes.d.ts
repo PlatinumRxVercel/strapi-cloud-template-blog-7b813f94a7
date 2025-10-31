@@ -625,6 +625,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     Overdose: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     QuickTips: Schema.Attribute.Blocks;
+    References: Schema.Attribute.Blocks;
     SafetyAdvice: Schema.Attribute.Blocks;
     SaltId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
