@@ -6,10 +6,10 @@
   "options": {},
   "attributes": {
     "Question": {
-      "type": "blocks"
+      "type": "string"
     },
     "Answer": {
-      "type": "blocks"
+      "type": "string"
     }
   },
   "config": {}
