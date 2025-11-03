@@ -73,12 +73,12 @@
     "FAQs": {
       "type": "component",
       "component": "shared.faq",
-      "repeatable": false
+      "repeatable": true
     },
     "References": {
       "type": "component",
       "component": "shared.references",
-      "repeatable": false
+      "repeatable": true
     }
   }
 }
