@@ -615,7 +615,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     DrugDiseaseInteractions: Schema.Attribute.Blocks;
     DrugDrugInteraction: Schema.Attribute.Blocks;
     DrugFoodInteraction: Schema.Attribute.Blocks;
-    FAQ: Schema.Attribute.Blocks;
+    FAQs: Schema.Attribute.Component<'shared.faq', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pdp.pdp'> &
       Schema.Attribute.Private;
@@ -625,8 +625,8 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     Overdose: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     QuickTips: Schema.Attribute.Blocks;
-    References: Schema.Attribute.Blocks;
-    SafetAdvice: Schema.Attribute.Component<'shared.slider', true>;
+    References: Schema.Attribute.Component<'shared.references', false>;
+    SafetyAdvice: Schema.Attribute.Component<'shared.slider', true>;
     SaltId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
