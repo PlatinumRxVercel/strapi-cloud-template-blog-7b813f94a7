@@ -5,11 +5,17 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "blocks"
-    },
     "Date": {
       "type": "date"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    },
+    "Author": {
+      "type": "string"
     }
   },
   "config": {}

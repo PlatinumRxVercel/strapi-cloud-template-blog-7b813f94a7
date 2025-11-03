@@ -6,8 +6,8 @@ export interface SharedFaq extends Struct.ComponentSchema {
     displayName: 'FAQ';
   };
   attributes: {
-    Answer: Schema.Attribute.Blocks;
-    Question: Schema.Attribute.Blocks;
+    Answer: Schema.Attribute.String;
+    Question: Schema.Attribute.String;
   };
 }
 
@@ -40,8 +40,10 @@ export interface SharedReferences extends Struct.ComponentSchema {
     displayName: 'References';
   };
   attributes: {
+    Author: Schema.Attribute.String;
     Date: Schema.Attribute.Date;
-    title: Schema.Attribute.Blocks;
+    Title: Schema.Attribute.String;
+    URL: Schema.Attribute.String;
   };
 }
 
