@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_references",
+  "info": {
+    "displayName": "References"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "Date": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

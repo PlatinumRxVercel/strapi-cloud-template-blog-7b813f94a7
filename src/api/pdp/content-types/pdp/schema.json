@@ -65,16 +65,20 @@
     "MissedDose": {
       "type": "blocks"
     },
-    "FAQ": {
-      "type": "blocks"
-    },
-    "References": {
-      "type": "blocks"
-    },
-    "SafetAdvice": {
+    "SafetyAdvice": {
       "type": "component",
       "component": "shared.slider",
       "repeatable": true
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "shared.faq",
+      "repeatable": false
+    },
+    "References": {
+      "type": "component",
+      "component": "shared.references",
+      "repeatable": false
     }
   }
 }
