@@ -607,6 +607,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
   };
   attributes: {
     Benefits: Schema.Attribute.Blocks;
+    Composition: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -623,6 +624,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     MechanismOfAction: Schema.Attribute.Blocks;
     MissedDose: Schema.Attribute.Blocks;
     Overdose: Schema.Attribute.Blocks;
+    Precautions: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     QuickTips: Schema.Attribute.Blocks;
     References: Schema.Attribute.Component<'shared.references', true>;
