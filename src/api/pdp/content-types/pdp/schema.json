@@ -29,6 +29,9 @@
     "Uses": {
       "type": "blocks"
     },
+    "Composition": {
+      "type": "blocks"
+    },
     "Benefits": {
       "type": "blocks"
     },
@@ -63,6 +66,9 @@
       "type": "blocks"
     },
     "MissedDose": {
+      "type": "blocks"
+    },
+    "Precautions": {
       "type": "blocks"
     },
     "SafetyAdvice": {
