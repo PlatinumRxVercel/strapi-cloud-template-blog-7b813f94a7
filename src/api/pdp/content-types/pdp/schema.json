@@ -71,6 +71,9 @@
     "Precautions": {
       "type": "blocks"
     },
+    "WhenToContactDoctor": {
+      "type": "blocks"
+    },
     "SafetyAdvice": {
       "type": "component",
       "component": "shared.slider",

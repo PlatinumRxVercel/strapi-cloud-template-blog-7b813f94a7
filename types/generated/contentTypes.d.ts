@@ -640,6 +640,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Uses: Schema.Attribute.Blocks;
+    WhenToContactDoctor: Schema.Attribute.Blocks;
   };
 }
 
