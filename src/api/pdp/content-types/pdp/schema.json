@@ -88,6 +88,18 @@
       "type": "component",
       "component": "shared.references",
       "repeatable": true
+    },
+    "ChemicalClass": {
+      "type": "string"
+    },
+    "HabitForming": {
+      "type": "string"
+    },
+    "TherapeuticClass": {
+      "type": "string"
+    },
+    "ActionClass": {
+      "type": "string"
     }
   }
 }

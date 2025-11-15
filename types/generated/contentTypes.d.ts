@@ -606,7 +606,9 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ActionClass: Schema.Attribute.String;
     Benefits: Schema.Attribute.Blocks;
+    ChemicalClass: Schema.Attribute.String;
     Composition: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -617,6 +619,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     DrugDrugInteraction: Schema.Attribute.Blocks;
     DrugFoodInteraction: Schema.Attribute.Blocks;
     FAQs: Schema.Attribute.Component<'shared.faq', true>;
+    HabitForming: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pdp.pdp'> &
       Schema.Attribute.Private;
@@ -636,6 +639,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     ShortDescription: Schema.Attribute.Blocks;
     SideEffects: Schema.Attribute.Blocks;
     Storage: Schema.Attribute.Blocks;
+    TherapeuticClass: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
