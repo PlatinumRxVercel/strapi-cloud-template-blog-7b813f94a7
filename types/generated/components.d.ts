@@ -6,8 +6,8 @@ export interface SharedFaq extends Struct.ComponentSchema {
     displayName: 'FAQ';
   };
   attributes: {
-    Answer: Schema.Attribute.String;
-    Question: Schema.Attribute.String;
+    Answer: Schema.Attribute.Text;
+    Question: Schema.Attribute.Text;
   };
 }
 
