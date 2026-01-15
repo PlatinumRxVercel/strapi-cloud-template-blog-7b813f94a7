@@ -29,6 +29,9 @@
     "Uses": {
       "type": "blocks"
     },
+    "Composition": {
+      "type": "blocks"
+    },
     "Benefits": {
       "type": "blocks"
     },
@@ -65,16 +68,38 @@
     "MissedDose": {
       "type": "blocks"
     },
-    "FAQ": {
+    "Precautions": {
       "type": "blocks"
     },
-    "References": {
+    "WhenToContactDoctor": {
       "type": "blocks"
     },
-    "SafetAdvice": {
+    "SafetyAdvice": {
       "type": "component",
       "component": "shared.slider",
       "repeatable": true
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "shared.faq",
+      "repeatable": true
+    },
+    "References": {
+      "type": "component",
+      "component": "shared.references",
+      "repeatable": true
+    },
+    "ChemicalClass": {
+      "type": "string"
+    },
+    "HabitForming": {
+      "type": "string"
+    },
+    "TherapeuticClass": {
+      "type": "string"
+    },
+    "ActionClass": {
+      "type": "string"
     }
   }
 }

@@ -606,7 +606,10 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ActionClass: Schema.Attribute.String;
     Benefits: Schema.Attribute.Blocks;
+    ChemicalClass: Schema.Attribute.String;
+    Composition: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -615,7 +618,8 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     DrugDiseaseInteractions: Schema.Attribute.Blocks;
     DrugDrugInteraction: Schema.Attribute.Blocks;
     DrugFoodInteraction: Schema.Attribute.Blocks;
-    FAQ: Schema.Attribute.Blocks;
+    FAQs: Schema.Attribute.Component<'shared.faq', true>;
+    HabitForming: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pdp.pdp'> &
       Schema.Attribute.Private;
@@ -623,10 +627,11 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     MechanismOfAction: Schema.Attribute.Blocks;
     MissedDose: Schema.Attribute.Blocks;
     Overdose: Schema.Attribute.Blocks;
+    Precautions: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     QuickTips: Schema.Attribute.Blocks;
-    References: Schema.Attribute.Blocks;
-    SafetAdvice: Schema.Attribute.Component<'shared.slider', true>;
+    References: Schema.Attribute.Component<'shared.references', true>;
+    SafetyAdvice: Schema.Attribute.Component<'shared.slider', true>;
     SaltId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -634,10 +639,12 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     ShortDescription: Schema.Attribute.Blocks;
     SideEffects: Schema.Attribute.Blocks;
     Storage: Schema.Attribute.Blocks;
+    TherapeuticClass: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Uses: Schema.Attribute.Blocks;
+    WhenToContactDoctor: Schema.Attribute.Blocks;
   };
 }
 

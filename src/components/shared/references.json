@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_references",
+  "info": {
+    "displayName": "References"
+  },
+  "options": {},
+  "attributes": {
+    "Date": {
+      "type": "date"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    },
+    "Author": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

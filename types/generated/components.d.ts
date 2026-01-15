@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    Answer: Schema.Attribute.String;
+    Question: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -20,6 +31,19 @@ export interface SharedQuote extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedReferences extends Struct.ComponentSchema {
+  collectionName: 'components_shared_references';
+  info: {
+    displayName: 'References';
+  };
+  attributes: {
+    Author: Schema.Attribute.String;
+    Date: Schema.Attribute.Date;
+    Title: Schema.Attribute.String;
+    URL: Schema.Attribute.String;
   };
 }
 
@@ -65,8 +89,10 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.faq': SharedFaq;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
+      'shared.references': SharedReferences;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;

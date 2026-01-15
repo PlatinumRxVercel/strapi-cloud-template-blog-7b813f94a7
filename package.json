@@ -12,6 +12,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@localazy/strapi-plugin": "^1.0.8",
     "@strapi/plugin-cloud": "5.28.0",
     "@strapi/plugin-users-permissions": "5.28.0",
     "@strapi/strapi": "^5.33.3",
