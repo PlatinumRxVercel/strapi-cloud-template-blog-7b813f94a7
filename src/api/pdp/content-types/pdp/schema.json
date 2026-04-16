@@ -9,7 +9,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "SaltId": {
       "type": "integer",
@@ -18,88 +22,218 @@
     },
     "SaltName": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     },
     "ShortDescription": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LongDescription": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Uses": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Composition": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Benefits": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "SideEffects": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DirectionsForUse": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "MechanismOfAction": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuickTips": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Storage": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DrugFoodInteraction": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DrugDrugInteraction": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DrugDiseaseInteractions": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DailyDose": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Overdose": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "MissedDose": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Precautions": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "WhenToContactDoctor": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "SafetyAdvice": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.slider",
       "repeatable": true
     },
     "FAQs": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.faq",
       "repeatable": true
     },
     "References": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.references",
       "repeatable": true
     },
     "ChemicalClass": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "HabitForming": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "TherapeuticClass": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "ActionClass": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

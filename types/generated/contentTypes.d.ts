@@ -605,44 +605,184 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    ActionClass: Schema.Attribute.String;
-    Benefits: Schema.Attribute.Blocks;
-    ChemicalClass: Schema.Attribute.String;
-    Composition: Schema.Attribute.Blocks;
+    ActionClass: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Benefits: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ChemicalClass: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Composition: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DailyDose: Schema.Attribute.Blocks;
-    DirectionsForUse: Schema.Attribute.Blocks;
-    DrugDiseaseInteractions: Schema.Attribute.Blocks;
-    DrugDrugInteraction: Schema.Attribute.Blocks;
-    DrugFoodInteraction: Schema.Attribute.Blocks;
-    FAQs: Schema.Attribute.Component<'shared.faq', true>;
-    HabitForming: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::pdp.pdp'> &
-      Schema.Attribute.Private;
-    LongDescription: Schema.Attribute.Blocks;
-    MechanismOfAction: Schema.Attribute.Blocks;
-    MissedDose: Schema.Attribute.Blocks;
-    Overdose: Schema.Attribute.Blocks;
-    Precautions: Schema.Attribute.Blocks;
+    DailyDose: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DirectionsForUse: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DrugDiseaseInteractions: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DrugDrugInteraction: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DrugFoodInteraction: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FAQs: Schema.Attribute.Component<'shared.faq', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HabitForming: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::pdp.pdp'>;
+    LongDescription: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    MechanismOfAction: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    MissedDose: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Overdose: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Precautions: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
-    QuickTips: Schema.Attribute.Blocks;
-    References: Schema.Attribute.Component<'shared.references', true>;
-    SafetyAdvice: Schema.Attribute.Component<'shared.slider', true>;
-    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique;
-    SaltName: Schema.Attribute.String & Schema.Attribute.Required;
-    ShortDescription: Schema.Attribute.Blocks;
-    SideEffects: Schema.Attribute.Blocks;
-    Storage: Schema.Attribute.Blocks;
-    TherapeuticClass: Schema.Attribute.String;
+    QuickTips: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    References: Schema.Attribute.Component<'shared.references', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SafetyAdvice: Schema.Attribute.Component<'shared.slider', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SaltName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ShortDescription: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SideEffects: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Storage: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TherapeuticClass: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Uses: Schema.Attribute.Blocks;
-    WhenToContactDoctor: Schema.Attribute.Blocks;
+    Uses: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    WhenToContactDoctor: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
