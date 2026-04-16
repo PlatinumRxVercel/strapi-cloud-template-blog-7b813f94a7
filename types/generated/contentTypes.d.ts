@@ -632,9 +632,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
     QuickTips: Schema.Attribute.Blocks;
     References: Schema.Attribute.Component<'shared.references', true>;
     SafetyAdvice: Schema.Attribute.Component<'shared.slider', true>;
-    SaltId: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique;
     SaltName: Schema.Attribute.String & Schema.Attribute.Required;
     ShortDescription: Schema.Attribute.Blocks;
     SideEffects: Schema.Attribute.Blocks;

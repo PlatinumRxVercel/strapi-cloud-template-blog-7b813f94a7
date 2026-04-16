@@ -13,7 +13,7 @@
   "attributes": {
     "SaltId": {
       "type": "integer",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "SaltName": {
