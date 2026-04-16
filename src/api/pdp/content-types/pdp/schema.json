@@ -17,12 +17,7 @@
   "attributes": {
     "SaltId": {
       "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
+      "required": false,
       "unique": true
     },
     "SaltName": {

@@ -731,9 +731,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    SaltId: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique &
+    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
