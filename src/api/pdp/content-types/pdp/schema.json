@@ -180,7 +180,7 @@
           "localized": true
         }
       },
-      "component": "shared.slider",
+      "component": "shared.safety-advice",
       "repeatable": true
     },
     "FAQs": {
