@@ -725,18 +725,13 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    SafetyAdvice: Schema.Attribute.Component<'shared.slider', true> &
+    SafetyAdvice: Schema.Attribute.Component<'shared.safety-advice', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    SaltId: Schema.Attribute.Integer & Schema.Attribute.Unique;
     SaltName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

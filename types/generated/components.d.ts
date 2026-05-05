@@ -59,6 +59,34 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSafetyAdvice extends Struct.ComponentSchema {
+  collectionName: 'components_shared_safety_advices';
+  info: {
+    displayName: 'Safety Advice';
+  };
+  attributes: {
+    advices: Schema.Attribute.Text;
+    safety_info_tag: Schema.Attribute.Enumeration<
+      ['Unsafe', 'Caution', 'Safe', 'Limited information']
+    > &
+      Schema.Attribute.Required;
+    topic: Schema.Attribute.Enumeration<
+      [
+        'Allergy',
+        'Pregnancy',
+        'Breastfeeding',
+        'Alcohol',
+        'Driving',
+        'Liver',
+        'Kidney',
+        'Children',
+        'Elderly Patients',
+      ]
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -94,6 +122,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.references': SharedReferences;
       'shared.rich-text': SharedRichText;
+      'shared.safety-advice': SharedSafetyAdvice;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
     }

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_safety_advices",
+  "info": {
+    "displayName": "Safety Advice"
+  },
+  "options": {},
+  "attributes": {
+    "topic": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Allergy",
+        "Pregnancy",
+        "Breastfeeding",
+        "Alcohol",
+        "Driving",
+        "Liver",
+        "Kidney",
+        "Children",
+        "Elderly Patients"
+      ]
+    },
+    "safety_info_tag": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Unsafe",
+        "Caution",
+        "Safe",
+        "Limited information"
+      ]
+    },
+    "advices": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
