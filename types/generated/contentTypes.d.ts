@@ -531,6 +531,48 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoryPageCategoryPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'category_pages';
+  info: {
+    displayName: 'Category Page';
+    pluralName: 'category-pages';
+    singularName: 'category-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Extras1: Schema.Attribute.Blocks;
+    Extras2: Schema.Attribute.Blocks;
+    Extras3: Schema.Attribute.Blocks;
+    Extras4: Schema.Attribute.Blocks;
+    Extras5: Schema.Attribute.Blocks;
+    Extras6: Schema.Attribute.Blocks;
+    FAQs: Schema.Attribute.Component<'shared.faq', true>;
+    isLeafNode: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category-page.category-page'
+    > &
+      Schema.Attribute.Private;
+    MedicineUsageForDiseaes: Schema.Attribute.Blocks;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    saltIds: Schema.Attribute.Text & Schema.Attribute.Required;
+    ShortDescription: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    UsedFor: Schema.Attribute.Blocks;
+    WhyToBuy: Schema.Attribute.Blocks;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1294,6 +1336,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::category-page.category-page': ApiCategoryPageCategoryPage;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::pdp.pdp': ApiPdpPdp;

@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_pages",
+  "info": {
+    "singularName": "category-page",
+    "pluralName": "category-pages",
+    "displayName": "Category Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "saltIds": {
+      "type": "text",
+      "required": true,
+      "regex": "^\\d+(\\s*,\\s*\\d+)*$"
+    },
+    "isLeafNode": {
+      "type": "boolean",
+      "required": true
+    },
+    "ShortDescription": {
+      "type": "blocks"
+    },
+    "WhyToBuy": {
+      "type": "blocks"
+    },
+    "UsedFor": {
+      "type": "blocks"
+    },
+    "MedicineUsageForDiseaes": {
+      "type": "blocks"
+    },
+    "Extras1": {
+      "type": "blocks"
+    },
+    "Extras2": {
+      "type": "blocks"
+    },
+    "Extras3": {
+      "type": "blocks"
+    },
+    "Extras4": {
+      "type": "blocks"
+    },
+    "Extras5": {
+      "type": "blocks"
+    },
+    "Extras6": {
+      "type": "blocks"
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "shared.faq",
+      "repeatable": true
+    }
+  }
+}
