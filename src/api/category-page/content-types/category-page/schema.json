@@ -58,6 +58,15 @@
       "type": "component",
       "component": "shared.faq",
       "repeatable": true
+    },
+    "L1": {
+      "type": "string"
+    },
+    "L2": {
+      "type": "string"
+    },
+    "L3": {
+      "type": "string"
     }
   }
 }
