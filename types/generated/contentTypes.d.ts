@@ -554,6 +554,9 @@ export interface ApiCategoryPageCategoryPage
     Extras6: Schema.Attribute.Blocks;
     FAQs: Schema.Attribute.Component<'shared.faq', true>;
     isLeafNode: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    L1: Schema.Attribute.String;
+    L2: Schema.Attribute.String;
+    L3: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
