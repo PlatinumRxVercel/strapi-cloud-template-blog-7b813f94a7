@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_sections",
+  "info": {
+    "displayName": "Section",
+    "description": "Heading + rich text block (Quick Summary and any other copy section)"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

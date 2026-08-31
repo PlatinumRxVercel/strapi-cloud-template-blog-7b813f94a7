@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blog_table_columns",
+  "info": {
+    "displayName": "Column heading",
+    "description": "One heading across the top. Do not add the row-heading column here — that is rowHeaderLabel."
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

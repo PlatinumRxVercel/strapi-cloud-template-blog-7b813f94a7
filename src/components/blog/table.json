@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blog_tables",
+  "info": {
+    "displayName": "Table",
+    "description": "Column headings across the top, row headings down the first column. Data cells sit at each intersection."
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "rowHeaderLabel": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "component",
+      "component": "blog.table-column",
+      "repeatable": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "blog.table-row",
+      "repeatable": true
+    }
+  }
+}

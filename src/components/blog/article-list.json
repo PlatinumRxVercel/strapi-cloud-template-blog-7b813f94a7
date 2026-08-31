@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blog_article_lists",
+  "info": {
+    "displayName": "Article list",
+    "description": "Comma-separated blog row IDs; FE hydrates article cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "articleIds": {
+      "type": "text",
+      "regex": "^\\d+(\\s*,\\s*\\d+)*$"
+    }
+  }
+}

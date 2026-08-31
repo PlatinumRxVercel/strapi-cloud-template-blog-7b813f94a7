@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blog_table_rows",
+  "info": {
+    "displayName": "Table row",
+    "description": "Row heading (first column) plus one data cell per column heading, left to right."
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "component",
+      "component": "blog.table-cell",
+      "repeatable": false
+    },
+    "cells": {
+      "type": "component",
+      "component": "blog.table-cell",
+      "repeatable": true
+    }
+  }
+}

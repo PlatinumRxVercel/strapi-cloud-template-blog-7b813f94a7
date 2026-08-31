@@ -1,5 +1,129 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlogArticleList extends Struct.ComponentSchema {
+  collectionName: 'components_blog_article_lists';
+  info: {
+    description: 'Comma-separated blog row IDs; FE hydrates article cards';
+    displayName: 'Article list';
+  };
+  attributes: {
+    articleIds: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlogCategoryList extends Struct.ComponentSchema {
+  collectionName: 'components_blog_category_lists';
+  info: {
+    description: 'Comma-separated health-condition category names';
+    displayName: 'Category list';
+  };
+  attributes: {
+    categories: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlogFaqBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blog_faq_blocks';
+  info: {
+    description: 'Repeatable FAQ list placed anywhere in the body';
+    displayName: 'FAQ block';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQs'>;
+    items: Schema.Attribute.Component<'shared.faq', true>;
+  };
+}
+
+export interface BlogMedicineList extends Struct.ComponentSchema {
+  collectionName: 'components_blog_medicine_lists';
+  info: {
+    description: 'Comma-separated master drug codes; FE hydrates product cards';
+    displayName: 'Medicine list';
+  };
+  attributes: {
+    drugCodes: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlogReferencesBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blog_references_blocks';
+  info: {
+    description: 'Repeatable references list placed anywhere in the body';
+    displayName: 'References block';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'References'>;
+    items: Schema.Attribute.Component<'shared.references', true>;
+  };
+}
+
+export interface BlogSection extends Struct.ComponentSchema {
+  collectionName: 'components_blog_sections';
+  info: {
+    description: 'Heading + rich text block (Quick Summary and any other copy section)';
+    displayName: 'Section';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlogTable extends Struct.ComponentSchema {
+  collectionName: 'components_blog_tables';
+  info: {
+    description: 'Column headings across the top, row headings down the first column. Data cells sit at each intersection.';
+    displayName: 'Table';
+  };
+  attributes: {
+    columns: Schema.Attribute.Component<'blog.table-column', true>;
+    heading: Schema.Attribute.String;
+    rowHeaderLabel: Schema.Attribute.String;
+    rows: Schema.Attribute.Component<'blog.table-row', true>;
+  };
+}
+
+export interface BlogTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_blog_table_cells';
+  info: {
+    description: 'Plain text plus color. Use for a row heading or a data cell. default=black, green, coral.';
+    displayName: 'Table cell';
+  };
+  attributes: {
+    color: Schema.Attribute.Enumeration<['default', 'green', 'coral']> &
+      Schema.Attribute.DefaultTo<'default'>;
+    text: Schema.Attribute.Text;
+    weight: Schema.Attribute.Enumeration<['normal', 'bold']> &
+      Schema.Attribute.DefaultTo<'normal'>;
+  };
+}
+
+export interface BlogTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_blog_table_columns';
+  info: {
+    description: 'One heading across the top. Do not add the row-heading column here \u2014 that is rowHeaderLabel.';
+    displayName: 'Column heading';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface BlogTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_blog_table_rows';
+  info: {
+    description: 'Row heading (first column) plus one data cell per column heading, left to right.';
+    displayName: 'Table row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'blog.table-cell', true>;
+    rowHeading: Schema.Attribute.Component<'blog.table-cell', false>;
+  };
+}
+
 export interface SharedFaq extends Struct.ComponentSchema {
   collectionName: 'components_shared_faqs';
   info: {
@@ -117,6 +241,16 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blog.article-list': BlogArticleList;
+      'blog.category-list': BlogCategoryList;
+      'blog.faq-block': BlogFaqBlock;
+      'blog.medicine-list': BlogMedicineList;
+      'blog.references-block': BlogReferencesBlock;
+      'blog.section': BlogSection;
+      'blog.table': BlogTable;
+      'blog.table-cell': BlogTableCell;
+      'blog.table-column': BlogTableColumn;
+      'blog.table-row': BlogTableRow;
       'shared.faq': SharedFaq;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

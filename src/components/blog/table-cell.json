@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blog_table_cells",
+  "info": {
+    "displayName": "Table cell",
+    "description": "Plain text plus color. Use for a row heading or a data cell. default=black, green, coral."
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": ["default", "green", "coral"],
+      "default": "default"
+    },
+    "weight": {
+      "type": "enumeration",
+      "enum": ["normal", "bold"],
+      "default": "normal"
+    }
+  }
+}
