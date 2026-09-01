@@ -21,11 +21,9 @@
       "targetField": "title",
       "required": true
     },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+    "imageUrl": {
+      "type": "string",
+      "required": false
     },
     "metaTitle": {
       "type": "string"
