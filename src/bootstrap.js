@@ -271,4 +271,52 @@ async function main() {
 
 module.exports = async () => {
   await seedExampleApp();
+  await pinBlogImageUrlInCoverSlot();
 };
+
+async function pinBlogImageUrlInCoverSlot() {
+  const uid = 'api::blog.blog';
+  const contentType = strapi.contentTypes[uid];
+  const service = strapi.plugin('content-manager')?.service('content-types');
+  if (!contentType || !service?.findConfiguration || !service?.updateConfiguration) {
+    return;
+  }
+
+  const current = await service.findConfiguration(contentType);
+  const edit = [
+    [
+      { name: 'title', size: 6 },
+      { name: 'slug', size: 6 },
+    ],
+    [{ name: 'imageUrl', size: 6 }],
+    [{ name: 'metaTitle', size: 6 }],
+    [{ name: 'metaDescription', size: 6 }],
+    [{ name: 'body', size: 12 }],
+  ];
+
+  await service.updateConfiguration(contentType, {
+    ...current,
+    metadatas: {
+      ...current.metadatas,
+      imageUrl: {
+        ...current.metadatas?.imageUrl,
+        edit: {
+          ...(current.metadatas?.imageUrl?.edit || {}),
+          label: 'Image URL',
+          description: 'CDN URL from the internal dashboard',
+          placeholder: 'https://',
+          visible: true,
+          editable: true,
+        },
+        list: {
+          ...(current.metadatas?.imageUrl?.list || {}),
+          label: 'Image URL',
+        },
+      },
+    },
+    layouts: {
+      ...current.layouts,
+      edit,
+    },
+  });
+}
