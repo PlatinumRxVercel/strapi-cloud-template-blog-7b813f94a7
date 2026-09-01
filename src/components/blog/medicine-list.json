@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blog_medicine_lists",
+  "info": {
+    "displayName": "Medicine list",
+    "description": "Comma-separated master drug codes; FE hydrates product cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "drugCodes": {
+      "type": "text",
+      "regex": "^\\d+(\\s*,\\s*\\d+)*$"
+    }
+  }
+}

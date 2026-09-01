@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blog_faq_blocks",
+  "info": {
+    "displayName": "FAQ block",
+    "description": "Repeatable FAQ list placed anywhere in the body"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "FAQs"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.faq",
+      "repeatable": true
+    }
+  }
+}

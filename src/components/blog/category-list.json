@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blog_category_lists",
+  "info": {
+    "displayName": "Category list",
+    "description": "Comma-separated health-condition category names"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "text",
+      "regex": "^[^,]+(\\s*,\\s*[^,]+)*$"
+    }
+  }
+}
