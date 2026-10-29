@@ -21,6 +21,13 @@
       "targetField": "title",
       "required": true
     },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-category.blog-category",
+      "required": true,
+      "inversedBy": "blogs"
+    },
     "imageUrl": {
       "type": "string",
       "required": false

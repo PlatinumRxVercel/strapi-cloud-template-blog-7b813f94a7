@@ -239,7 +239,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 }
 
 declare module '@strapi/strapi' {
-  export module Public {
+  export namespace Public {
     export interface ComponentSchemas {
       'blog.article-list': BlogArticleList;
       'blog.category-list': BlogCategoryList;
