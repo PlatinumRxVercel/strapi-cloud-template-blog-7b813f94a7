@@ -7,7 +7,7 @@
     "displayName": "Blog Categories"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
