@@ -553,7 +553,7 @@ export interface ApiBlogCategoryBlogCategory
     singularName: 'blog-category';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog.blog'>;
