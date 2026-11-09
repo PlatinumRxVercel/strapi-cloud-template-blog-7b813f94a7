@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diseases",
+  "info": {
+    "singularName": "disease",
+    "pluralName": "diseases",
+    "displayName": "Disease"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "heroImgUrl": {
+      "type": "string",
+      "required": true
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "metaKeywords": {
+      "type": "text"
+    }
+  }
+}
