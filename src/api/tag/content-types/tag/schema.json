@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tags"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "diseases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::disease.disease",
+      "mappedBy": "tags"
+    },
+    "healthConditions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category-page.category-page",
+      "mappedBy": "tags"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "tags"
+    },
+    "salts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pdp.pdp",
+      "mappedBy": "tags"
+    }
+  }
+}

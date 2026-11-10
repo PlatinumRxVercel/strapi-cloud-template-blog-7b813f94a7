@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category-page",
     "pluralName": "category-pages",
-    "displayName": "Category Page"
+    "displayName": "Health Conditions"
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +23,12 @@
     "isLeafNode": {
       "type": "boolean",
       "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "healthConditions"
     },
     "ShortDescription": {
       "type": "blocks"

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "disease",
     "pluralName": "diseases",
-    "displayName": "Disease"
+    "displayName": "Diseases"
   },
   "options": {
     "draftAndPublish": true
@@ -24,11 +24,27 @@
       "type": "string",
       "required": true
     },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "diseases"
+    },
     "relatedSaltIds": {
       "type": "string"
     },
     "relatedDiseaseIds": {
       "type": "string"
+    },
+    "metadata": {
+      "type": "component",
+      "component": "disease.metadata",
+      "repeatable": false
+    },
+    "jsonLdSchema": {
+      "type": "component",
+      "component": "disease.json-ld-schema",
+      "repeatable": false
     },
     "body": {
       "type": "dynamiczone",
@@ -37,8 +53,6 @@
         "disease.faq-block",
         "disease.medicine-list",
         "disease.references-block",
-        "disease.metadata",
-        "disease.json-ld-schema",
         "disease.table-block"
       ]
     }
