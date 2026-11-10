@@ -9,7 +9,7 @@
     "heading": {
       "type": "string"
     },
-    "highlight": {
+    "isHighlighted": {
       "type": "boolean",
       "default": false
     },

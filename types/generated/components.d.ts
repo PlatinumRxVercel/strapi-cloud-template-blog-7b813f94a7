@@ -133,7 +133,7 @@ export interface DiseaseContentBlock extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.Blocks;
     heading: Schema.Attribute.String;
-    highlight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isHighlighted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -147,7 +147,6 @@ export interface DiseaseFaqBlock extends Struct.ComponentSchema {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
     faqs: Schema.Attribute.Component<'disease.faq-item', true>;
-    heading: Schema.Attribute.String;
   };
 }
 
@@ -189,7 +188,8 @@ export interface DiseaseMedicineList extends Struct.ComponentSchema {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
     drugCodes: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Selected Medicines'>;
   };
 }
 
@@ -240,7 +240,6 @@ export interface DiseaseReferencesBlock extends Struct.ComponentSchema {
   attributes: {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
-    heading: Schema.Attribute.String;
     references: Schema.Attribute.Component<'disease.reference-item', true>;
   };
 }
