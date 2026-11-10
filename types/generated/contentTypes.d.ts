@@ -714,6 +714,17 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'disease.content-block',
+        'disease.faq-block',
+        'disease.medicine-list',
+        'disease.references-block',
+        'disease.metadata',
+        'disease.json-ld-schema',
+        'disease.table-block',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -724,13 +735,10 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
       'api::disease.disease'
     > &
       Schema.Attribute.Private;
-    metaDescription: Schema.Attribute.Text;
-    metaKeywords: Schema.Attribute.Text;
-    metaTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    relatedDiseaseIds: Schema.Attribute.String;
+    relatedSaltIds: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

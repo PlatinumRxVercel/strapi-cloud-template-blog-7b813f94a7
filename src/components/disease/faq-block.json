@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_disease_faq_blocks",
+  "info": {
+    "displayName": "FAQ Block",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "beforeContent": {
+      "type": "blocks"
+    },
+    "faqs": {
+      "type": "component",
+      "component": "disease.faq-item",
+      "repeatable": true
+    },
+    "afterContent": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_disease_reference_items",
+  "info": {
+    "displayName": "Reference Item",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

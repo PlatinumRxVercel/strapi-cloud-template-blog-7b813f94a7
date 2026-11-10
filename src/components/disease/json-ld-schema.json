@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_disease_json_ld_schemas",
+  "info": {
+    "displayName": "JSON-LD Schema",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "possibleComplications": {
+      "type": "text"
+    },
+    "signOrSymptoms": {
+      "type": "text"
+    },
+    "possibleTreatments": {
+      "type": "component",
+      "component": "disease.possible-treatment-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

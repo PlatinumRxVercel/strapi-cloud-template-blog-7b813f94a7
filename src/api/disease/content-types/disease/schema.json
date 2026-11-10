@@ -16,22 +16,31 @@
       "required": true
     },
     "slug": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     },
     "heroImgUrl": {
       "type": "string",
       "required": true
     },
-    "metaTitle": {
+    "relatedSaltIds": {
       "type": "string"
     },
-    "metaDescription": {
-      "type": "text"
+    "relatedDiseaseIds": {
+      "type": "string"
     },
-    "metaKeywords": {
-      "type": "text"
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "disease.content-block",
+        "disease.faq-block",
+        "disease.medicine-list",
+        "disease.references-block",
+        "disease.metadata",
+        "disease.json-ld-schema",
+        "disease.table-block"
+      ]
     }
   }
 }
