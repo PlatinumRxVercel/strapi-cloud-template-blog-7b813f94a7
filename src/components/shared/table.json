@@ -5,12 +5,12 @@
   },
   "options": {},
   "attributes": {
-    "headers": {
+    "header": {
       "type": "component",
       "component": "shared.table-cell",
       "repeatable": true
     },
-    "rows": {
+    "body": {
       "type": "component",
       "component": "shared.table-row",
       "repeatable": true

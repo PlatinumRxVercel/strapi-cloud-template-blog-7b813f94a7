@@ -378,8 +378,8 @@ export interface SharedTable extends Struct.ComponentSchema {
     displayName: 'Table';
   };
   attributes: {
-    headers: Schema.Attribute.Component<'shared.table-cell', true>;
-    rows: Schema.Attribute.Component<'shared.table-row', true>;
+    body: Schema.Attribute.Component<'shared.table-row', true>;
+    header: Schema.Attribute.Component<'shared.table-cell', true>;
   };
 }
 
