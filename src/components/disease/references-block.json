@@ -12,7 +12,8 @@
     "references": {
       "type": "component",
       "component": "disease.reference-item",
-      "repeatable": true
+      "repeatable": true,
+      "required": true
     },
     "afterContent": {
       "type": "blocks"

@@ -187,7 +187,7 @@ export interface DiseaseMedicineList extends Struct.ComponentSchema {
   attributes: {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
-    drugCodes: Schema.Attribute.String;
+    drugCodes: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Selected Medicines'>;
   };
@@ -240,7 +240,8 @@ export interface DiseaseReferencesBlock extends Struct.ComponentSchema {
   attributes: {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
-    references: Schema.Attribute.Component<'disease.reference-item', true>;
+    references: Schema.Attribute.Component<'disease.reference-item', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -254,7 +255,8 @@ export interface DiseaseTableBlock extends Struct.ComponentSchema {
     afterContent: Schema.Attribute.Blocks;
     beforeContent: Schema.Attribute.Blocks;
     heading: Schema.Attribute.String;
-    table: Schema.Attribute.Component<'shared.table', false>;
+    table: Schema.Attribute.Component<'shared.table', false> &
+      Schema.Attribute.Required;
   };
 }
 

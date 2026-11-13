@@ -14,7 +14,8 @@
       "type": "blocks"
     },
     "drugCodes": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "afterContent": {
       "type": "blocks"

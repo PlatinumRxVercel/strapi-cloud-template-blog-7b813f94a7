@@ -15,7 +15,8 @@
     "table": {
       "type": "component",
       "component": "shared.table",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     },
     "afterContent": {
       "type": "blocks"
