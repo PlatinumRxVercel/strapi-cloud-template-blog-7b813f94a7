@@ -21,17 +21,17 @@
       "targetField": "title",
       "required": true
     },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "blogs"
+    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::blog-category.blog-category",
       "required": true,
-      "inversedBy": "blogs"
-    },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
       "inversedBy": "blogs"
     },
     "imageUrl": {
