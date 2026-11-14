@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_table_rows",
+  "info": {
+    "displayName": "Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "cells": {
+      "type": "component",
+      "component": "shared.table-cell",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

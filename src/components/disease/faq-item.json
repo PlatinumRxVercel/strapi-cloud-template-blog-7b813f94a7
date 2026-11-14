@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_disease_faq_items",
+  "info": {
+    "displayName": "QnA Item",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -619,6 +619,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     metaTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -630,7 +631,7 @@ export interface ApiCategoryPageCategoryPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'category_pages';
   info: {
-    displayName: 'Category Page';
+    displayName: 'Health Conditions';
     pluralName: 'category-pages';
     singularName: 'category-page';
   };
@@ -663,6 +664,7 @@ export interface ApiCategoryPageCategoryPage
     publishedAt: Schema.Attribute.DateTime;
     saltIds: Schema.Attribute.Text & Schema.Attribute.Required;
     ShortDescription: Schema.Attribute.Blocks;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -697,6 +699,50 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
+  collectionName: 'diseases';
+  info: {
+    displayName: 'Diseases';
+    pluralName: 'diseases';
+    singularName: 'disease';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'disease.content-block',
+        'disease.faq-block',
+        'disease.medicine-list',
+        'disease.references-block',
+        'disease.table-block',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroImgUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    jsonLdSchema: Schema.Attribute.Component<'disease.json-ld-schema', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::disease.disease'
+    > &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'disease.metadata', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    relatedDiseaseIds: Schema.Attribute.String;
+    relatedSaltIds: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -738,7 +784,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
   collectionName: 'pdps';
   info: {
-    displayName: 'PDP';
+    displayName: 'Salts';
     pluralName: 'pdps';
     singularName: 'pdp';
   };
@@ -897,6 +943,7 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     TherapeuticClass: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -918,6 +965,40 @@ export interface ApiPdpPdp extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+  };
+}
+
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    displayName: 'Tags';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog.blog'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    diseases: Schema.Attribute.Relation<'manyToMany', 'api::disease.disease'>;
+    healthConditions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category-page.category-page'
+    >;
+    isActive: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    salts: Schema.Attribute.Relation<'manyToMany', 'api::pdp.pdp'>;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1439,8 +1520,10 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::category-page.category-page': ApiCategoryPageCategoryPage;
       'api::category.category': ApiCategoryCategory;
+      'api::disease.disease': ApiDiseaseDisease;
       'api::global.global': ApiGlobalGlobal;
       'api::pdp.pdp': ApiPdpPdp;
+      'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

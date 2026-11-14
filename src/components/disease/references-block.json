@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_disease_references_blocks",
+  "info": {
+    "displayName": "References Block",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "beforeContent": {
+      "type": "blocks"
+    },
+    "references": {
+      "type": "component",
+      "component": "disease.reference-item",
+      "repeatable": true,
+      "required": true
+    },
+    "afterContent": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

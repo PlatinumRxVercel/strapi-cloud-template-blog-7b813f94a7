@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_disease_table_blocks",
+  "info": {
+    "displayName": "Table Block",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "beforeContent": {
+      "type": "blocks"
+    },
+    "table": {
+      "type": "component",
+      "component": "shared.table",
+      "repeatable": false,
+      "required": true
+    },
+    "afterContent": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}
