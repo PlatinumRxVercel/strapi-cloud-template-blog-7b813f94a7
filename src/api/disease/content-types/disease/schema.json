@@ -21,8 +21,7 @@
       "required": true
     },
     "heroImgUrl": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "tags": {
       "type": "relation",
@@ -33,8 +32,10 @@
     "relatedSaltIds": {
       "type": "string"
     },
-    "relatedDiseaseIds": {
-      "type": "string"
+    "relatedDiseases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::disease.disease"
     },
     "metadata": {
       "type": "component",

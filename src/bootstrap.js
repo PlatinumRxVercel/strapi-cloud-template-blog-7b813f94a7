@@ -292,6 +292,7 @@ async function pinBlogImageUrlInCoverSlot() {
       { name: 'categories', size: 6 },
       { name: 'imageUrl', size: 6 },
     ],
+    [{ name: 'tags', size: 12 }],
     [{ name: 'metaTitle', size: 6 }],
     [{ name: 'metaDescription', size: 6 }],
     [{ name: 'body', size: 12 }],

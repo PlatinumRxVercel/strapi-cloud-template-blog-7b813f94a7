@@ -728,7 +728,7 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroImgUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImgUrl: Schema.Attribute.String;
     jsonLdSchema: Schema.Attribute.Component<'disease.json-ld-schema', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -738,7 +738,10 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     metadata: Schema.Attribute.Component<'disease.metadata', false>;
     publishedAt: Schema.Attribute.DateTime;
-    relatedDiseaseIds: Schema.Attribute.String;
+    relatedDiseases: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::disease.disease'
+    >;
     relatedSaltIds: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
@@ -994,7 +997,11 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     salts: Schema.Attribute.Relation<'manyToMany', 'api::pdp.pdp'>;
-    slug: Schema.Attribute.UID<'title'>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
