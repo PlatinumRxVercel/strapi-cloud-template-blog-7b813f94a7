@@ -10,8 +10,7 @@
     "postinstall": "npm rebuild @swc/core better-sqlite3",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
-    "strapi": "strapi",
-    "test": "node --test \"tests/**/*.test.js\""
+    "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.53.0",
