@@ -734,14 +734,16 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
           min: 1;
         },
         number
-      >;
+      > &
+      Schema.Attribute.DefaultTo<21>;
     doctorId2: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
           min: 1;
         },
         number
-      >;
+      > &
+      Schema.Attribute.DefaultTo<26>;
     heroImgUrl: Schema.Attribute.String;
     jsonLdSchema: Schema.Attribute.Component<'disease.json-ld-schema', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

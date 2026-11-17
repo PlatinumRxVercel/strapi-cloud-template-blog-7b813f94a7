@@ -42,10 +42,12 @@
     },
     "doctorId": {
       "type": "integer",
+      "default": 21,
       "min": 1
     },
     "doctorId2": {
       "type": "integer",
+      "default": 26,
       "min": 1
     },
     "metadata": {
