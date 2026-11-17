@@ -40,6 +40,14 @@
       "relation": "manyToMany",
       "target": "api::disease.disease"
     },
+    "doctorId": {
+      "type": "integer",
+      "min": 1
+    },
+    "doctorId2": {
+      "type": "integer",
+      "min": 1
+    },
     "metadata": {
       "type": "component",
       "component": "disease.metadata",

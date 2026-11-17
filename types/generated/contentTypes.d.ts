@@ -728,6 +728,20 @@ export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    doctorId: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    doctorId2: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     heroImgUrl: Schema.Attribute.String;
     jsonLdSchema: Schema.Attribute.Component<'disease.json-ld-schema', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
