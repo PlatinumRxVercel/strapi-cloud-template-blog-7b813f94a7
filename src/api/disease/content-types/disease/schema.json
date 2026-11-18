@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diseases",
+  "info": {
+    "singularName": "disease",
+    "pluralName": "diseases",
+    "displayName": "Diseases"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "regex": "\\S"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "minLength": 1,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "heroImgUrl": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "diseases"
+    },
+    "relatedSaltIds": {
+      "type": "string"
+    },
+    "relatedDiseases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::disease.disease"
+    },
+    "doctorId": {
+      "type": "integer",
+      "default": 21,
+      "min": 1
+    },
+    "doctorId2": {
+      "type": "integer",
+      "default": 26,
+      "min": 1
+    },
+    "metadata": {
+      "type": "component",
+      "component": "disease.metadata",
+      "repeatable": false
+    },
+    "jsonLdSchema": {
+      "type": "component",
+      "component": "disease.json-ld-schema",
+      "repeatable": false
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "disease.content-block",
+        "disease.faq-block",
+        "disease.medicine-list",
+        "disease.references-block",
+        "disease.table-block"
+      ]
+    }
+  }
+}

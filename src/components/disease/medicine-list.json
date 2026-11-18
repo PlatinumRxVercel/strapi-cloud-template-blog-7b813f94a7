@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_disease_medicine_lists",
+  "info": {
+    "displayName": "Medicine List",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Selected Medicines"
+    },
+    "beforeContent": {
+      "type": "blocks"
+    },
+    "drugCodes": {
+      "type": "string",
+      "required": true
+    },
+    "afterContent": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_disease_possible_treatment_items",
+  "info": {
+    "displayName": "Possible Treatment Item",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pdp",
     "pluralName": "pdps",
-    "displayName": "PDP"
+    "displayName": "Salts"
   },
   "options": {
     "draftAndPublish": true
@@ -15,11 +15,6 @@
     }
   },
   "attributes": {
-    "SaltId": {
-      "type": "integer",
-      "required": false,
-      "unique": true
-    },
     "SaltName": {
       "type": "string",
       "pluginOptions": {
@@ -28,6 +23,17 @@
         }
       },
       "required": true
+    },
+    "SaltId": {
+      "type": "integer",
+      "required": false,
+      "unique": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "salts"
     },
     "ShortDescription": {
       "type": "blocks",

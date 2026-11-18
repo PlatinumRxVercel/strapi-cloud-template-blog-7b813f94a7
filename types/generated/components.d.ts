@@ -124,6 +124,142 @@ export interface BlogTableRow extends Struct.ComponentSchema {
   };
 }
 
+export interface DiseaseContentBlock extends Struct.ComponentSchema {
+  collectionName: 'components_disease_content_blocks';
+  info: {
+    displayName: 'Content Block';
+    icon: 'grid';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+    isHighlighted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
+export interface DiseaseFaqBlock extends Struct.ComponentSchema {
+  collectionName: 'components_disease_faq_blocks';
+  info: {
+    displayName: 'FAQ Block';
+    icon: 'grid';
+  };
+  attributes: {
+    afterContent: Schema.Attribute.Blocks;
+    beforeContent: Schema.Attribute.Blocks;
+    faqs: Schema.Attribute.Component<'disease.faq-item', true>;
+  };
+}
+
+export interface DiseaseFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_disease_faq_items';
+  info: {
+    displayName: 'QnA Item';
+    icon: 'expand';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.String;
+  };
+}
+
+export interface DiseaseJsonLdSchema extends Struct.ComponentSchema {
+  collectionName: 'components_disease_json_ld_schemas';
+  info: {
+    displayName: 'JSON-LD Schema';
+    icon: 'grid';
+  };
+  attributes: {
+    possibleComplications: Schema.Attribute.Text;
+    possibleTreatments: Schema.Attribute.Component<
+      'disease.possible-treatment-item',
+      true
+    >;
+    signOrSymptoms: Schema.Attribute.Text;
+  };
+}
+
+export interface DiseaseMedicineList extends Struct.ComponentSchema {
+  collectionName: 'components_disease_medicine_lists';
+  info: {
+    displayName: 'Medicine List';
+    icon: 'grid';
+  };
+  attributes: {
+    afterContent: Schema.Attribute.Blocks;
+    beforeContent: Schema.Attribute.Blocks;
+    drugCodes: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Selected Medicines'>;
+  };
+}
+
+export interface DiseaseMetadata extends Struct.ComponentSchema {
+  collectionName: 'components_disease_metadata';
+  info: {
+    displayName: 'SEO Metadata';
+    icon: 'grid';
+  };
+  attributes: {
+    metaDescription: Schema.Attribute.Text;
+    metaKeywords: Schema.Attribute.Text;
+    metaTitle: Schema.Attribute.String;
+    ogUrl: Schema.Attribute.String;
+  };
+}
+
+export interface DiseasePossibleTreatmentItem extends Struct.ComponentSchema {
+  collectionName: 'components_disease_possible_treatment_items';
+  info: {
+    displayName: 'Possible Treatment Item';
+    icon: 'expand';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface DiseaseReferenceItem extends Struct.ComponentSchema {
+  collectionName: 'components_disease_reference_items';
+  info: {
+    displayName: 'Reference Item';
+    icon: 'expand';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface DiseaseReferencesBlock extends Struct.ComponentSchema {
+  collectionName: 'components_disease_references_blocks';
+  info: {
+    displayName: 'References Block';
+    icon: 'grid';
+  };
+  attributes: {
+    afterContent: Schema.Attribute.Blocks;
+    beforeContent: Schema.Attribute.Blocks;
+    references: Schema.Attribute.Component<'disease.reference-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface DiseaseTableBlock extends Struct.ComponentSchema {
+  collectionName: 'components_disease_table_blocks';
+  info: {
+    displayName: 'Table Block';
+    icon: 'grid';
+  };
+  attributes: {
+    afterContent: Schema.Attribute.Blocks;
+    beforeContent: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+    table: Schema.Attribute.Component<'shared.table', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedFaq extends Struct.ComponentSchema {
   collectionName: 'components_shared_faqs';
   info: {
@@ -238,6 +374,37 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTable extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tables';
+  info: {
+    displayName: 'Table';
+  };
+  attributes: {
+    body: Schema.Attribute.Component<'shared.table-row', true>;
+    header: Schema.Attribute.Component<'shared.table-cell', true>;
+  };
+}
+
+export interface SharedTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_shared_table_cells';
+  info: {
+    displayName: 'Table Cell';
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_table_rows';
+  info: {
+    displayName: 'Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'shared.table-cell', true>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
@@ -251,6 +418,16 @@ declare module '@strapi/strapi' {
       'blog.table-cell': BlogTableCell;
       'blog.table-column': BlogTableColumn;
       'blog.table-row': BlogTableRow;
+      'disease.content-block': DiseaseContentBlock;
+      'disease.faq-block': DiseaseFaqBlock;
+      'disease.faq-item': DiseaseFaqItem;
+      'disease.json-ld-schema': DiseaseJsonLdSchema;
+      'disease.medicine-list': DiseaseMedicineList;
+      'disease.metadata': DiseaseMetadata;
+      'disease.possible-treatment-item': DiseasePossibleTreatmentItem;
+      'disease.reference-item': DiseaseReferenceItem;
+      'disease.references-block': DiseaseReferencesBlock;
+      'disease.table-block': DiseaseTableBlock;
       'shared.faq': SharedFaq;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
@@ -259,6 +436,9 @@ declare module '@strapi/strapi' {
       'shared.safety-advice': SharedSafetyAdvice;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.table': SharedTable;
+      'shared.table-cell': SharedTableCell;
+      'shared.table-row': SharedTableRow;
     }
   }
 }

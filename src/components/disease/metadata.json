@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_disease_metadata",
+  "info": {
+    "displayName": "SEO Metadata",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "metaKeywords": {
+      "type": "text"
+    },
+    "ogUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
